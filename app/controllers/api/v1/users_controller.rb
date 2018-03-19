@@ -22,6 +22,7 @@ class Api::V1::UsersController < ApiProtectedController
     common_api_response(resp_data, resp_status, resp_message, resp_errors)
   end
 
+  
   # def reset_password
   #   student=Student.find_by_id(params[:student][:student_id])
   #   if student && student.valid_password?(params[:student][:password])
