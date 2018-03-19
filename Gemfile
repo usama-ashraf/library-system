@@ -32,7 +32,7 @@ gem 'jwt'
 
 # for user authentication
 gem 'devise'
-
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 # invitation model integrated
 gem 'devise_invitable'
 

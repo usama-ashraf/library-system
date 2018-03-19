@@ -22,7 +22,45 @@ class Api::V1::UsersController < ApiProtectedController
     common_api_response(resp_data, resp_status, resp_message, resp_errors)
   end
 
-  
+  def search_book
+    if params[:keyword].present? && params[:search_by].present?
+      search = params[:keyword]
+      if params[:search_by] == "keyword"
+        @books = Book.where("title LIKE ? OR sub_title LIKE ? OR author LIKE ? OR sub_author LIKE ? OR section LIKE ? OR book_publisher LIKE ? OR place LIKE ? OR book_source LIKE ? OR book_edition LIKE ? OR series LIKE ? OR isbn LIKE ? OR subject LIKE ? OR keyword LIKE ? OR discipline LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+      elsif params[:search_by] == "title"
+        @books = Book.where("title LIKE ?", "%#{search}%")
+      elsif params[:search_by] == "author"
+        @books = Book.where("author LIKE ?", "%#{search}%")
+      elsif params[:search_by] == "subject"
+        @books = Book.where("subject LIKE ?", "%#{search}%")
+      elsif params[:search_by] == "series"
+        @books = Book.where("series LIKE ?", "%#{search}%")
+      elsif params[:search_by] == "isbn"
+        @books = Book.where("isbn LIKE ?", "%#{search}%")
+      elsif params[:search_by] == "callno"
+        @books = Book.where("section LIKE ?", "%#{search}%")
+      end
+      if @books.present?
+        resp_data    = books_response(@books)
+        resp_status  = 200
+        resp_message = 'Books list'
+        resp_errors  = ''
+      else
+        resp_data    = ''
+        resp_status  = 400
+        resp_message = 'No books found'
+        resp_errors  = 'No books found'
+      end
+      common_api_response(resp_data, resp_status, resp_message, resp_errors)
+    else
+      resp_data    = ''
+      resp_status  = 400
+      resp_message = 'Please add correct parameters'
+      resp_errors  = 'Please add correct parameters'
+    common_api_response(resp_data, resp_status, resp_message, resp_errors)
+    end
+  end
+
   # def reset_password
   #   student=Student.find_by_id(params[:student][:student_id])
   #   if student && student.valid_password?(params[:student][:password])
@@ -114,6 +152,10 @@ class Api::V1::UsersController < ApiProtectedController
 
   def patron_response(patron, auth_token)
     { auth_token: auth_token, patron: patron}.as_json
+  end
+
+  def books_response(books)
+    { patron: books}.as_json
   end
 end
 

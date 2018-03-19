@@ -1,0 +1,73 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  sub_title: MyString
+  statement_resource: MyString
+  author: MyString
+  sub_author: MyString
+  book_type: MyString
+  account_no: 1
+  price: 1.5
+  entry_date: 2018-03-20
+  ddc_no: 1.5
+  auth_mark: MyString
+  section: MyString
+  book_reference: false
+  book_publisher: MyString
+  place: MyString
+  book_year: 1
+  book_source: MyString
+  book_edition: MyString
+  book_volume: MyString
+  book_pages: 1
+  series: MyString
+  language: MyString
+  isbn: MyString
+  binding: MyString
+  cd_flopy: MyString
+  status: 
+  remarks: MyString
+  content: 
+  notes: MyString
+  subject: MyString
+  keyword: MyString
+  suggested_by: MyString
+  discipline: MyString
+  shipping_charges: MyString
+
+two:
+  title: MyString
+  sub_title: MyString
+  statement_resource: MyString
+  author: MyString
+  sub_author: MyString
+  book_type: MyString
+  account_no: 1
+  price: 1.5
+  entry_date: 2018-03-20
+  ddc_no: 1.5
+  auth_mark: MyString
+  section: MyString
+  book_reference: false
+  book_publisher: MyString
+  place: MyString
+  book_year: 1
+  book_source: MyString
+  book_edition: MyString
+  book_volume: MyString
+  book_pages: 1
+  series: MyString
+  language: MyString
+  isbn: MyString
+  binding: MyString
+  cd_flopy: MyString
+  status: 
+  remarks: MyString
+  content: 
+  notes: MyString
+  subject: MyString
+  keyword: MyString
+  suggested_by: MyString
+  discipline: MyString
+  shipping_charges: MyString

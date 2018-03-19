@@ -10,10 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180310225658) do
+ActiveRecord::Schema.define(version: 20180319203307) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "books", force: :cascade do |t|
+    t.string   "title"
+    t.string   "sub_title"
+    t.string   "statement_resource"
+    t.string   "author"
+    t.string   "sub_author"
+    t.string   "book_type"
+    t.integer  "account_no"
+    t.float    "price"
+    t.date     "entry_date"
+    t.float    "ddc_no"
+    t.string   "auth_mark"
+    t.string   "section"
+    t.boolean  "book_reference"
+    t.string   "book_publisher"
+    t.string   "place"
+    t.integer  "book_year"
+    t.string   "book_source"
+    t.string   "book_edition"
+    t.string   "book_volume"
+    t.integer  "book_pages"
+    t.string   "series"
+    t.string   "language"
+    t.string   "isbn"
+    t.string   "binding"
+    t.string   "cd_flopy"
+    t.string   "status"
+    t.string   "remarks"
+    t.string   "content"
+    t.string   "notes"
+    t.string   "subject"
+    t.string   "keyword"
+    t.string   "suggested_by"
+    t.string   "discipline"
+    t.string   "shipping_charges"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
 
   create_table "patrons", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

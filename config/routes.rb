@@ -21,6 +21,7 @@ Rails.application.routes.draw do
           post :sign_in
           post :reset_password
           post :forgot_password
+          post :search_book
         end
       end
     end
