@@ -19,7 +19,7 @@ Rails.application.configure do
       :port                 => 587,
       :domain               => 'gmail.com',
       :user_name            => 'testingw06@gmail.com',
-      :password             => 'qwertyuiop123456',
+      :password             => 'zxcvbnm123$',
       :authentication       => 'plain'
   }
   # Full error reports are disabled and caching is turned on.
