@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e38bcaf6-0c00-4d1a-86d2-95e206b805b4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/production.rb" afterPath="$PROJECT_DIR$/config/environments/production.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -18,21 +18,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="users_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/users_controller.rb">
+      <file leaf-file-name="production.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="117" column="19" lean-forward="false" selection-start-line="117" selection-start-column="19" selection-end-line="117" selection-end-column="19" />
+            <state relative-caret-position="315">
+              <caret line="21" column="43" lean-forward="false" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="production.rb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
+      <file leaf-file-name="devise_invitable.en.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/locales/devise_invitable.en.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="43" lean-forward="false" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+            <state relative-caret-position="240">
+              <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/devise/invitations/new.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/devise/invitations/edit.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -43,16 +63,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
               <caret line="14" column="46" lean-forward="false" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -88,31 +98,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="application_controller.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="5" lean-forward="false" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="active_admin.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/initializers/active_admin.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
               <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/admin/user.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="22" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="20180407195504_create_reserve_books.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20180407195504_create_reserve_books.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="5" lean-forward="false" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -135,6 +135,10 @@
       <find>Skel</find>
       <find>site_title</find>
       <find>config.mailer_sender</find>
+      <find>http://localhost:3000/</find>
+      <find>you can accept it through the link below.</find>
+      <find>omeone has invited you to</find>
+      <find>url</find>
     </findStrings>
     <replaceStrings>
       <replace>LIKE ?</replace>
@@ -165,6 +169,7 @@
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/config/initializers/devise.rb" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
       </list>
     </option>
   </component>
@@ -251,6 +256,13 @@
             <path>
               <item name="library-system" type="52f3b0f7:RailsProjectNode" />
               <item name="library-system" type="ca5d24b0:RailsModuleNode" />
+              <item name="Views" type="5c6743c1:UnclassifiedViewsFolderNode" />
+              <item name="devise" type="d5499faf:UnclassifiedViewsSubFolderNode" />
+              <item name="invitations" type="d5499faf:UnclassifiedViewsSubFolderNode" />
+            </path>
+            <path>
+              <item name="library-system" type="52f3b0f7:RailsProjectNode" />
+              <item name="library-system" type="ca5d24b0:RailsModuleNode" />
               <item name="app/admin" type="28f67eca:MinorFolderWithDoubleNameNode" />
             </path>
           </expand>
@@ -289,7 +301,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="SearchEverywhereHistoryKey" value="devi&#9;FILE&#9;file:///Users/usamakhan/work/Ali project/ali-library/library-system/config/initializers/devise.rb&#10;pro&#9;FILE&#9;file:///Users/usamakhan/work/Ali project/ali-library/library-system/config/environments/production.rb&#10;see&#9;FILE&#9;file:///Users/usamakhan/work/Ali project/ali-library/library-system/db/seeds.rb&#10;prod&#9;FILE&#9;file:///Users/usamakhan/work/Ali project/ali-library/library-system/config/environments/production.rb&#10;rout&#9;FILE&#9;file:///Users/usamakhan/work/Ali project/ali-library/library-system/config/routes.rb&#10;rou&#9;FILE&#9;file:///Users/usamakhan/work/Ali project/ali-library/library-system/config/routes.rb&#10;ddc&#9;null&#9;null&#10;gem&#9;FILE&#9;file:///Users/usamakhan/work/Ali project/ali-library/library-system/Gemfile&#10;seed&#9;FILE&#9;file:///Users/usamakhan/work/Ali project/ali-library/library-system/db/seeds.rb" />
+    <property name="SearchEverywhereHistoryKey" value="appl&#9;null&#9;null&#10;app&#9;FILE&#9;file:///Users/usamakhan/work/Ali project/ali-library/library-system/app/views/layouts/application.html.erb&#10;devi&#9;FILE&#9;file:///Users/usamakhan/work/Ali project/ali-library/library-system/config/initializers/devise.rb&#10;pro&#9;FILE&#9;file:///Users/usamakhan/work/Ali project/ali-library/library-system/config/environments/production.rb&#10;see&#9;FILE&#9;file:///Users/usamakhan/work/Ali project/ali-library/library-system/db/seeds.rb&#10;prod&#9;FILE&#9;file:///Users/usamakhan/work/Ali project/ali-library/library-system/config/environments/production.rb&#10;rout&#9;FILE&#9;file:///Users/usamakhan/work/Ali project/ali-library/library-system/config/routes.rb&#10;rou&#9;FILE&#9;file:///Users/usamakhan/work/Ali project/ali-library/library-system/config/routes.rb&#10;ddc&#9;null&#9;null&#10;gem&#9;FILE&#9;file:///Users/usamakhan/work/Ali project/ali-library/library-system/Gemfile&#10;seed&#9;FILE&#9;file:///Users/usamakhan/work/Ali project/ali-library/library-system/db/seeds.rb" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -421,12 +433,12 @@
       <updated>1521489320312</updated>
       <workItem from="1521489321700" duration="5828000" />
       <workItem from="1523109299967" duration="2520000" />
-      <workItem from="1523129471664" duration="5566000" />
+      <workItem from="1523129471664" duration="6067000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13914000" />
+    <option name="totallyTimeSpent" value="14415000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="833" extended-state="0" />
@@ -629,14 +641,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/initializers/devise.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -649,6 +653,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="43" lean-forward="false" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/locales/devise_invitable.en.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/devise/invitations/edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/devise/invitations/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="5" lean-forward="false" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
           <folding />
         </state>
       </provider>
