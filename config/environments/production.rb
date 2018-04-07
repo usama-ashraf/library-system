@@ -9,7 +9,7 @@ Rails.application.configure do
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
-  config.action_mailer.default_url_options = { :host => 'bharia-library-system.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'https://bharia-library-system.herokuapp.com' }
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true
   config.action_mailer.default :charset => "utf-8"
@@ -17,11 +17,10 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
       :address              => "smtp.gmail.com",
       :port                 => 587,
-      :domain               => 'bharia-library-system.herokuapp.com',
+      :domain               => 'https://bharia-library-system.herokuapp.com',
       :user_name            => 'testingw06@gmail.com',
       :password             => 'qwertyuiop123456',
-      :authentication       => 'plain',
-      :enable_starttls_auto => true  }
+      :authentication       => 'plain' }
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
