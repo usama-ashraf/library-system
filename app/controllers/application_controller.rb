@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_mailer_host
 
   def set_mailer_host
-    ActionMailer::Base.default_url_options[:host] = request.host_with_port
+    ActionMailer::Base.default_url_options[:host] = request.base_url
   end
   def redirect_url
     return new_patron_session_path unless patron_signed_in?
