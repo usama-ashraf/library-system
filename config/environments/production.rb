@@ -17,10 +17,11 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
       :address              => "smtp.gmail.com",
       :port                 => 587,
-      :domain               => 'https://bharia-library-system.herokuapp.com',
+      :domain               => 'gmail.com',
       :user_name            => 'testingw06@gmail.com',
       :password             => 'qwertyuiop123456',
-      :authentication       => 'plain' }
+      :authentication       => 'plain'
+  }
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
