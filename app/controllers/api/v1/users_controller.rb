@@ -61,6 +61,74 @@ class Api::V1::UsersController < ApiProtectedController
     end
   end
 
+  def reserve_book
+    if params[:book_id].present? && params[:user_id].present?
+      reserverd_book = ReserveBook.new(user_id: params[:user_id], book_id: params[:book_id], status: false)
+      if reserverd_book.save
+        resp_data    = books_reserve(reserverd_book)
+        resp_status  = 200
+        resp_message = 'Books reserved successfully'
+        resp_errors  = ''
+      end
+      common_api_response(resp_data, resp_status, resp_message, resp_errors)
+    else
+      resp_data    = ''
+      resp_status  = 400
+      resp_message = 'Book id or User id missing'
+      resp_errors  = 'Book id or User id missing'
+      common_api_response(resp_data, resp_status, resp_message, resp_errors)
+    end
+  end
+
+  def show_book
+    if params[:book_id].present?
+      book = Book.find_by_id(params[:book_id])
+      if book.present?
+        resp_data    = book_details(book)
+        resp_status  = 200
+        resp_message = 'Book found successfully'
+        resp_errors  = ''
+      else
+        resp_data    = ''
+        resp_status  = 400
+        resp_message = 'No books found'
+        resp_errors  = 'No books found'
+      end
+      common_api_response(resp_data, resp_status, resp_message, resp_errors)
+    else
+      resp_data    = ''
+      resp_status  = 400
+      resp_message = 'Book id missing'
+      resp_errors  = 'Book id missing'
+      common_api_response(resp_data, resp_status, resp_message, resp_errors)
+    end
+  end
+
+  # def destroy
+  #   if params[:user_id].present?
+  #     user = User.find_by_id(params[:user_id])
+  #     if user.present?
+  #       sign_out(user)
+  #       resp_data    = ""
+  #       resp_status  = 200
+  #       resp_message = 'User signed out successfully'
+  #       resp_errors  = ''
+  #     else
+  #       resp_data    = ''
+  #       resp_status  = 400
+  #       resp_message = 'User not found'
+  #       resp_errors  = 'User not found'
+  #     end
+  #     common_api_response(resp_data, resp_status, resp_message, resp_errors)
+  #   else
+  #     resp_data    = ''
+  #     resp_status  = 400
+  #     resp_message = 'User id missing'
+  #     resp_errors  = 'User id missing'
+  #     common_api_response(resp_data, resp_status, resp_message, resp_errors)
+  #   end
+  # end
+
   # def reset_password
   #   student=Student.find_by_id(params[:student][:student_id])
   #   if student && student.valid_password?(params[:student][:password])
@@ -155,7 +223,15 @@ class Api::V1::UsersController < ApiProtectedController
   end
 
   def books_response(books)
-    { patron: books}.as_json
+    { books_list: books}.as_json
   end
+
+  def books_reserve(book)
+    { reserved_book: book}.as_json
+  end
+  def book_details(book)
+    { book_details: book}.as_json
+  end
+
 end
 

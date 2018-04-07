@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Admin.create(email: 'admin@bharia.com', password: 'admin123', username: 'admin@bharia.com')
+Admin.create(email: 'admin@bharia.com', password: 'admin123', username: 'admin@bharia.com')
 
 volume = ["1st", "2nd", "3rd", "4th", "5th" ]
 50.times do

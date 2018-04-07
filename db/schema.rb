@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180319203307) do
+ActiveRecord::Schema.define(version: 20180407195504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,6 +88,16 @@ ActiveRecord::Schema.define(version: 20180319203307) do
     t.index ["invited_by_id"], name: "index_patrons_on_invited_by_id", using: :btree
     t.index ["reset_password_token"], name: "index_patrons_on_reset_password_token", unique: true, using: :btree
     t.index ["username"], name: "index_patrons_on_username", unique: true, using: :btree
+  end
+
+  create_table "reserve_books", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "book_id"
+    t.boolean  "status",     default: false
+    t.date     "issue_date"
+    t.date     "due_date"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
 end
