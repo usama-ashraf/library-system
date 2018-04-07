@@ -61,10 +61,8 @@ group :development do
   gem 'heroku'
 end
 
-group :heroku do
-  gem 'pg'
-end
 
+  gem 'pg'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
