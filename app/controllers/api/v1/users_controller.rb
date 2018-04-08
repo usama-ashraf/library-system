@@ -104,6 +104,22 @@ class Api::V1::UsersController < ApiProtectedController
     end
   end
 
+  def books_list
+      books = Book.all
+      if books.present?
+        resp_data    = book_details(books)
+        resp_status  = 200
+        resp_message = 'Books found successfully'
+        resp_errors  = ''
+      else
+        resp_data    = ''
+        resp_status  = 400
+        resp_message = 'No books found'
+        resp_errors  = 'No books found'
+      end
+      common_api_response(resp_data, resp_status, resp_message, resp_errors)
+  end
+
   # def destroy
   #   if params[:user_id].present?
   #     user = User.find_by_id(params[:user_id])

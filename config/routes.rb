@@ -25,6 +25,7 @@ Rails.application.routes.draw do
           post :reserve_book
           post :show_book
           delete :destroy
+          get :books_list
         end
       end
     end
