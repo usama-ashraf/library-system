@@ -1,6 +1,6 @@
 ActiveAdmin.register User do
   permit_params :email, :username
-
+  
   controller do
     def create
       @user = User.invite!(permitted_params[:user], current_admin)
@@ -11,7 +11,7 @@ ActiveAdmin.register User do
       end
     end
   end
-
+  
   index do
     selectable_column
     id_column
@@ -22,17 +22,19 @@ ActiveAdmin.register User do
     column :invited_by
     actions
   end
-
+  
   filter :email
   filter :current_sign_in_at
   filter :sign_in_count
   filter :created_at
   # filter :invited_by, :as => :select, :collection => Admin.all.collect{|admin| [admin.email, admin.id]}
-
+  
   form do |f|
     f.inputs "Invite User #{current_admin.inspect}" do
       f.input :email
       f.input :username
+      f.input :password
+      f.input :password_confirmation
     end
     f.actions
   end
