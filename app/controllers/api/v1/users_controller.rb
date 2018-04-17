@@ -1,10 +1,10 @@
 class Api::V1::UsersController < ApiProtectedController
   skip_before_action :verify_authenticity_token
-
+  
   before_action only: [:update_student] do
     :authenticate_request!
   end
-
+  
   def sign_in
     patron = Patron.find_by_username(params[:username])
     if patron && patron.valid_password?(params[:password])
@@ -21,7 +21,7 @@ class Api::V1::UsersController < ApiProtectedController
     end
     common_api_response(resp_data, resp_status, resp_message, resp_errors)
   end
-
+  
   def search_book
     if params[:keyword].present? && params[:search_by].present?
       search = params[:keyword]
@@ -57,10 +57,10 @@ class Api::V1::UsersController < ApiProtectedController
       resp_status  = 400
       resp_message = 'Please add correct parameters'
       resp_errors  = 'Please add correct parameters'
-    common_api_response(resp_data, resp_status, resp_message, resp_errors)
+      common_api_response(resp_data, resp_status, resp_message, resp_errors)
     end
   end
-
+  
   def reserve_book
     if params[:book_id].present? && params[:user_id].present?
       reserverd_book = ReserveBook.new(user_id: params[:user_id], book_id: params[:book_id], status: false)
@@ -79,7 +79,7 @@ class Api::V1::UsersController < ApiProtectedController
       common_api_response(resp_data, resp_status, resp_message, resp_errors)
     end
   end
-
+  
   def show_book
     if params[:book_id].present?
       book = Book.find_by_id(params[:book_id])
@@ -103,23 +103,55 @@ class Api::V1::UsersController < ApiProtectedController
       common_api_response(resp_data, resp_status, resp_message, resp_errors)
     end
   end
-
+  
   def books_list
-      books = Book.all
-      if books.present?
-        resp_data    = book_details(books)
-        resp_status  = 200
-        resp_message = 'Books found successfully'
-        resp_errors  = ''
-      else
-        resp_data    = ''
-        resp_status  = 400
-        resp_message = 'No books found'
-        resp_errors  = 'No books found'
-      end
-      common_api_response(resp_data, resp_status, resp_message, resp_errors)
+    books = Book.all
+    if books.present?
+      resp_data    = book_details(books)
+      resp_status  = 200
+      resp_message = 'Books found successfully'
+      resp_errors  = ''
+    else
+      resp_data    = ''
+      resp_status  = 400
+      resp_message = 'No books found'
+      resp_errors  = 'No books found'
+    end
+    common_api_response(resp_data, resp_status, resp_message, resp_errors)
   end
-
+  
+  def reserve_books
+    books=ReserveBook.where(user_id: params[:user_id])
+    if books.present?
+      resp_data    = reserve_books_resp(books)
+      resp_status  = 200
+      resp_message = 'Books found successfully'
+      resp_errors  = ''
+    else
+      resp_data    = ''
+      resp_status  = 400
+      resp_message = 'No books found'
+      resp_errors  = 'No books found'
+    end
+    common_api_response(resp_data, resp_status, resp_message, resp_errors)
+  end
+  
+  def book_suggestion
+    book_suggestion =BookSuggestion.new(book_suggestion_params)
+    if book_suggestion.save
+      resp_data    = ''
+      resp_status  = 200
+      resp_message = 'Suggestion is created successfully'
+      resp_errors  = ''
+    else
+      resp_data    = ''
+      resp_status  = 400
+      resp_message = 'Error'
+      resp_errors  = 'Error'
+    end
+    common_api_response(resp_data, resp_status, resp_message, resp_errors)
+  end
+  
   # def destroy
   #   if params[:user_id].present?
   #     user = User.find_by_id(params[:user_id])
@@ -144,7 +176,7 @@ class Api::V1::UsersController < ApiProtectedController
   #     common_api_response(resp_data, resp_status, resp_message, resp_errors)
   #   end
   # end
-
+  
   # def reset_password
   #   student=Student.find_by_id(params[:student][:student_id])
   #   if student && student.valid_password?(params[:student][:password])
@@ -233,20 +265,39 @@ class Api::V1::UsersController < ApiProtectedController
     # params.require(:student).permit(:email,:name,:password,:profile_image)
     params.require(:student).permit!
   end
-
+  
   def patron_response(patron, auth_token)
-    { auth_token: auth_token, patron: patron}.as_json
+    { auth_token: auth_token, patron: patron }.as_json
   end
-
+  
   def books_response(books)
-    { books_list: books}.as_json
+    { books_list: books }.as_json
   end
-
+  
   def books_reserve(book)
-    { reserved_book: book}.as_json
+    { reserved_book: book }.as_json
   end
+  
   def book_details(book)
-    { book_details: book}.as_json
+    { book_details: book }.as_json
+  end
+  
+  def reserve_books_resp(books)
+    books=books.as_json(
+        include: {
+            book: {
+                only: [:id, :title, :sub_title, :statement_resource, :author, :sub_author, :book_type,
+                       :account_no, :price, :entry_date, :ddc_no, :auth_mark, :section, :book_reference,
+                       :book_publisher, :place, :book_year, :book_source, :book_edition, :book_volume,
+                       :book_pages, :series, :language, :isbn, :binding, :cd_flopy, :status, :remarks,
+                       :content, :notes, :subject, :keyword, :suggested_by, :discipline, :shipping_charges]
+            }
+        }
+    
+    )
+  end
+  def book_suggestion_params
+    params.require(:book_suggestion).permit!
   end
 
 end

@@ -12457,3 +12457,199 @@ Processing by Admin::BooksController#index as HTML
 Completed 200 OK in 438ms (Views: 429.5ms | ActiveRecord: 4.0ms)
 
 
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5288427128707212630);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBookSuggestions (20180417181305)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (18.7ms)[0m  [1m[35mCREATE TABLE "book_suggestions" ("id" serial primary key, "book_name" character varying, "auther_name" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180417181305"]]
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5288427128707212630)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mReserveBook Load (2.9ms)[0m  [1m[34mSELECT "reserve_books".* FROM "reserve_books" WHERE "reserve_books"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mReserveBook Load (0.6ms)[0m  [1m[34mSELECT "reserve_books".* FROM "reserve_books" WHERE "reserve_books"."user_id" = $1[0m  [["user_id", 2]]
+Started POST "/api/v1/users/reserve_books" for 127.0.0.1 at 2018-04-17 23:27:27 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::UsersController#reserve_books as HTML
+  Parameters: {"user_id"=>2, "user"=>{}}
+  [1m[36mReserveBook Load (0.5ms)[0m  [1m[34mSELECT "reserve_books".* FROM "reserve_books" WHERE "reserve_books"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBook Load (2.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+Completed 200 OK in 128ms (Views: 0.2ms | ActiveRecord: 16.6ms)
+
+
+Started POST "/api/v1/users/book_suggestion" for 127.0.0.1 at 2018-04-17 23:38:34 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::UsersController#book_suggestion as HTML
+  Parameters: {"book_suggesion"=>{"user_id"=>2, "book_name"=>"ABC", "author_name"=>"ali"}, "user"=>{}}
+Completed 500  in 13ms (ActiveRecord: 3.2ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: book_suggestion):
+  
+app/controllers/api/v1/users_controller.rb:300:in `book_suggestion_params'
+app/controllers/api/v1/users_controller.rb:140:in `book_suggestion'
+  Rendering /home/ferhan/.rvm/gems/ruby-2.4.0@library/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/ferhan/.rvm/gems/ruby-2.4.0@library/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/ferhan/.rvm/gems/ruby-2.4.0@library/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.9ms)
+  Rendering /home/ferhan/.rvm/gems/ruby-2.4.0@library/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/ferhan/.rvm/gems/ruby-2.4.0@library/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendering /home/ferhan/.rvm/gems/ruby-2.4.0@library/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/ferhan/.rvm/gems/ruby-2.4.0@library/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/ferhan/.rvm/gems/ruby-2.4.0@library/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.3ms)
+Started POST "/api/v1/users/book_suggestion" for 127.0.0.1 at 2018-04-17 23:39:12 +0500
+Processing by Api::V1::UsersController#book_suggestion as HTML
+  Parameters: {"book_suggesion"=>{"user_id"=>2, "book_name"=>"ABC", "author_name"=>"ali"}, "user"=>{}}
+Completed 500  in 36413ms (ActiveRecord: 2.7ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: book_suggestion):
+  
+app/controllers/api/v1/users_controller.rb:301:in `book_suggestion_params'
+app/controllers/api/v1/users_controller.rb:141:in `book_suggestion'
+  Rendering /home/ferhan/.rvm/gems/ruby-2.4.0@library/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/ferhan/.rvm/gems/ruby-2.4.0@library/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/ferhan/.rvm/gems/ruby-2.4.0@library/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering /home/ferhan/.rvm/gems/ruby-2.4.0@library/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/ferhan/.rvm/gems/ruby-2.4.0@library/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /home/ferhan/.rvm/gems/ruby-2.4.0@library/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/ferhan/.rvm/gems/ruby-2.4.0@library/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /home/ferhan/.rvm/gems/ruby-2.4.0@library/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (34.8ms)
+Started POST "/api/v1/users/book_suggestion" for 127.0.0.1 at 2018-04-17 23:39:59 +0500
+Processing by Api::V1::UsersController#book_suggestion as HTML
+  Parameters: {"book_suggestion"=>{"user_id"=>2, "book_name"=>"ABC", "author_name"=>"ali"}, "user"=>{}}
+Completed 500  in 2490ms (ActiveRecord: 5.2ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'author_name' for BookSuggestion.):
+  
+app/controllers/api/v1/users_controller.rb:141:in `book_suggestion'
+  Rendering /home/ferhan/.rvm/gems/ruby-2.4.0@library/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/ferhan/.rvm/gems/ruby-2.4.0@library/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/ferhan/.rvm/gems/ruby-2.4.0@library/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.2ms)
+  Rendering /home/ferhan/.rvm/gems/ruby-2.4.0@library/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/ferhan/.rvm/gems/ruby-2.4.0@library/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendering /home/ferhan/.rvm/gems/ruby-2.4.0@library/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/ferhan/.rvm/gems/ruby-2.4.0@library/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/ferhan/.rvm/gems/ruby-2.4.0@library/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (37.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5288427128707212630);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBookSuggestions (20180417181305)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.3ms)[0m  [1m[35mDROP TABLE "book_suggestions"[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20180417181305"]]
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5288427128707212630)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5288427128707212630);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBookSuggestions (20180417181305)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "book_suggestions" ("id" serial primary key, "book_name" character varying, "author_name" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180417181305"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(5288427128707212630)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started POST "/api/v1/users/book_suggestion" for 127.0.0.1 at 2018-04-17 23:41:54 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::UsersController#book_suggestion as HTML
+  Parameters: {"book_suggestion"=>{"user_id"=>2, "book_name"=>"ABC", "author_name"=>"ali"}, "user"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User') AND "patrons"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "book_suggestions" ("book_name", "author_name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["book_name", "ABC"], ["author_name", "ali"], ["user_id", 2], ["created_at", "2018-04-17 18:41:56.933402"], ["updated_at", "2018-04-17 18:41:56.933402"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 2616ms (Views: 0.3ms | ActiveRecord: 20.4ms)
+
+
+Started GET "/admin/reserve_books" for 127.0.0.1 at 2018-04-17 23:42:06 +0500
+Processing by Admin::ReserveBooksController#index as HTML
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2018-04-17 23:42:06 +0500
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering /home/ferhan/.rvm/gems/ruby-2.4.0@library/bundler/gems/activeadmin-dabd8b30874f/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/ferhan/.rvm/gems/ruby-2.4.0@library/bundler/gems/activeadmin-dabd8b30874f/app/views/active_admin/devise/shared/_links.erb (1.3ms)
+  Rendered /home/ferhan/.rvm/gems/ruby-2.4.0@library/bundler/gems/activeadmin-dabd8b30874f/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (39.5ms)
+Completed 200 OK in 930ms (Views: 899.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2018-04-17 23:42:24 +0500
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zkVsoJGo/RrRLOL7w3ExbQq/pI3uqteLubSSi3gBEWvvfFUlfa+lGzpS8ECi+pQdaVN28HMlrETECnLZcT0+Ag==", "admin"=>{"username"=>"admin@bharia.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mAdmin Load (1.3ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('Admin') AND "patrons"."username" = $1 ORDER BY "patrons"."id" ASC LIMIT $2[0m  [["username", "admin@bharia.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "patrons" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "patrons"."id" = $4[0m  [["current_sign_in_at", "2018-04-17 18:42:24.569923"], ["sign_in_count", 2], ["updated_at", "2018-04-17 18:42:24.574352"], ["id", 1]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admin/reserve_books
+Completed 302 Found in 224ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/admin/reserve_books" for 127.0.0.1 at 2018-04-17 23:42:24 +0500
+Processing by Admin::ReserveBooksController#index as HTML
+  [1m[36mAdmin Load (0.6ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('Admin') AND "patrons"."id" = $1 ORDER BY "patrons"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/ferhan/.rvm/gems/ruby-2.4.0@library/bundler/gems/activeadmin-dabd8b30874f/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "reserve_books" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "reserve_books" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reserve_books"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "reserve_books" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mReserveBook Load (0.8ms)[0m  [1m[34mSELECT  "reserve_books".* FROM "reserve_books" ORDER BY "reserve_books"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User') AND "patrons"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User') AND "patrons"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User')[0m
+  [1m[36mBook Load (5.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered /home/ferhan/.rvm/gems/ruby-2.4.0@library/bundler/gems/activeadmin-dabd8b30874f/app/views/active_admin/resource/index.html.arb (331.7ms)
+Completed 200 OK in 357ms (Views: 324.1ms | ActiveRecord: 19.1ms)
+
+
+Started GET "/admin/book_suggestions" for 127.0.0.1 at 2018-04-17 23:42:28 +0500
+Processing by Admin::BookSuggestionsController#index as HTML
+  [1m[36mAdmin Load (1.2ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('Admin') AND "patrons"."id" = $1 ORDER BY "patrons"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/ferhan/.rvm/gems/ruby-2.4.0@library/bundler/gems/activeadmin-dabd8b30874f/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "book_suggestions" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "book_suggestions" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "book_suggestions"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "book_suggestions" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mBookSuggestion Load (0.5ms)[0m  [1m[34mSELECT  "book_suggestions".* FROM "book_suggestions" ORDER BY "book_suggestions"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User') AND "patrons"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User')[0m
+  Rendered /home/ferhan/.rvm/gems/ruby-2.4.0@library/bundler/gems/activeadmin-dabd8b30874f/app/views/active_admin/resource/index.html.arb (194.8ms)
+Completed 200 OK in 209ms (Views: 196.7ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/api/v1/users/reserve_books" for 127.0.0.1 at 2018-04-17 23:43:50 +0500
+Processing by Api::V1::UsersController#reserve_books as HTML
+  Parameters: {"user_id"=>2, "user"=>{}}
+  [1m[36mReserveBook Load (0.5ms)[0m  [1m[34mSELECT "reserve_books".* FROM "reserve_books" WHERE "reserve_books"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/admin/books" for 127.0.0.1 at 2018-04-17 23:44:30 +0500
+Processing by Admin::BooksController#index as HTML
+  [1m[36mAdmin Load (0.9ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('Admin') AND "patrons"."id" = $1 ORDER BY "patrons"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/ferhan/.rvm/gems/ruby-2.4.0@library/bundler/gems/activeadmin-dabd8b30874f/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "books" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "books" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "books" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY "books"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mReserveBook Load (0.5ms)[0m  [1m[34mSELECT "reserve_books".* FROM "reserve_books"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User')[0m
+  Rendered /home/ferhan/.rvm/gems/ruby-2.4.0@library/bundler/gems/activeadmin-dabd8b30874f/app/views/active_admin/resource/index.html.arb (477.5ms)
+Completed 200 OK in 488ms (Views: 479.0ms | ActiveRecord: 4.0ms)
+
+
