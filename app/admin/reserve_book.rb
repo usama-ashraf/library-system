@@ -6,8 +6,8 @@ ActiveAdmin.register ReserveBook do
       f.input :status
       f.input :issue_date
       f.input :due_date
-      f.input :user_id, :as => :select, :collection => User.all.map{|u| ["#{u.email}", u.id]}
-      f.input :book_id, :as => :select, :collection => Book.all.map{|u| ["#{u.title}", u.id]}
+      f.input :user_id, :as => :selectize, :collection => User.all.map{|u| ["#{u.email}", u.id]}
+      f.input :book_id, :as => :selectize, :collection => Book.all.map{|u| ["#{u.title}", u.id]}
     end
     f.actions
   end

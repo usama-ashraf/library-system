@@ -3,5 +3,5 @@ class User < Patron
   
   has_many :reserve_books
   has_many :books, through: :reserve_books
-  has_many :book_suggestion
+  has_many :book_suggestions
 end

@@ -12653,3 +12653,404 @@ Processing by Admin::BooksController#index as HTML
 Completed 200 OK in 488ms (Views: 479.0ms | ActiveRecord: 4.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-04-29 21:28:43 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (12.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.7) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.7) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.7) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.7) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.7) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.7) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+rack-contrib (2.0.1) lib/rack/contrib/response_headers.rb:17:in `call'
+meta_request (0.6.0) lib/meta_request/middlewares/headers.rb:16:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.3ms)
+  Rendering /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (133.0ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5288427128707212630);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBookSuggestions (20180417181305)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (37.2ms)[0m  [1m[35mCREATE TABLE "book_suggestions" ("id" serial primary key, "book_name" character varying, "author_name" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180417181305"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5288427128707212630)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2018-04-29 21:29:15 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 15ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-29 21:29:15 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (23.0ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+Completed 200 OK in 3811ms (Views: 3768.2ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2018-04-29 21:29:29 +0500
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/bundler/gems/activeadmin-dabd8b30874f/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/bundler/gems/activeadmin-dabd8b30874f/app/views/active_admin/devise/shared/_links.erb (1.4ms)
+  Rendered /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/bundler/gems/activeadmin-dabd8b30874f/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (38.5ms)
+Completed 200 OK in 288ms (Views: 261.3ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2018-04-29 21:29:46 +0500
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C0Gh3WTx3WLvHJqP1dEl3Y5GwzOWmtPmwn5ruyW5pqY3dwVPY++l8TJYQB/ZrvTrzGyC2dCmCe7m0Cq2ETJuYg==", "admin"=>{"username"=>"admin@bharia.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mAdmin Load (14.2ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('Admin') AND "patrons"."username" = $1 ORDER BY "patrons"."id" ASC LIMIT $2[0m  [["username", "admin@bharia.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "patrons" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "patrons"."id" = $5[0m  [["current_sign_in_at", "2018-04-29 16:29:46.408683"], ["last_sign_in_at", "2018-04-07 19:47:13.427057"], ["sign_in_count", 4], ["updated_at", "2018-04-29 16:29:46.410579"], ["id", 1]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 230ms (ActiveRecord: 16.1ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2018-04-29 21:29:46 +0500
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdmin Load (1.4ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('Admin') AND "patrons"."id" = $1 ORDER BY "patrons"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/bundler/gems/activeadmin-dabd8b30874f/app/views/active_admin/page/index.html.arb
+  Rendered /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/bundler/gems/activeadmin-dabd8b30874f/app/views/active_admin/page/index.html.arb (135.9ms)
+Completed 200 OK in 150ms (Views: 143.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/admin/reserve_books" for 127.0.0.1 at 2018-04-29 21:29:49 +0500
+Processing by Admin::ReserveBooksController#index as HTML
+  [1m[36mAdmin Load (1.4ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('Admin') AND "patrons"."id" = $1 ORDER BY "patrons"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/bundler/gems/activeadmin-dabd8b30874f/app/views/active_admin/resource/index.html.arb
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "reserve_books" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "reserve_books" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reserve_books"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "reserve_books" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mReserveBook Load (0.4ms)[0m  [1m[34mSELECT  "reserve_books".* FROM "reserve_books" ORDER BY "reserve_books"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User') AND "patrons"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBook Load (6.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User')[0m
+  [1m[36mBook Load (11.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/bundler/gems/activeadmin-dabd8b30874f/app/views/active_admin/resource/index.html.arb (251.7ms)
+Completed 200 OK in 284ms (Views: 244.8ms | ActiveRecord: 29.2ms)
+
+
+Started GET "/admin/reserve_books/new" for 127.0.0.1 at 2018-04-29 21:29:51 +0500
+Processing by Admin::ReserveBooksController#new as HTML
+  [1m[36mAdmin Load (1.7ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('Admin') AND "patrons"."id" = $1 ORDER BY "patrons"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/bundler/gems/activeadmin-dabd8b30874f/app/views/active_admin/resource/new.html.arb
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User')[0m
+  [1m[36mBook Load (1.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/bundler/gems/activeadmin-dabd8b30874f/app/views/active_admin/resource/new.html.arb (134.5ms)
+Completed 200 OK in 159ms (Views: 150.8ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-29 21:41:57 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 14ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-29 21:41:57 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.7ms)
+  Rendered shared/_flash.html.erb (0.7ms)
+Completed 200 OK in 6776ms (Views: 6733.6ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2018-04-29 21:42:06 +0500
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdmin Load (1.6ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('Admin') AND "patrons"."id" = $1 ORDER BY "patrons"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activeadmin-1.3.0/app/views/active_admin/page/index.html.arb
+  Rendered /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activeadmin-1.3.0/app/views/active_admin/page/index.html.arb (242.4ms)
+Completed 200 OK in 285ms (Views: 248.7ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/admin/reserve_books" for 127.0.0.1 at 2018-04-29 21:42:09 +0500
+Processing by Admin::ReserveBooksController#index as HTML
+  [1m[36mAdmin Load (1.4ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('Admin') AND "patrons"."id" = $1 ORDER BY "patrons"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activeadmin-1.3.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "reserve_books" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "reserve_books" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reserve_books"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "reserve_books" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mReserveBook Load (0.3ms)[0m  [1m[34mSELECT  "reserve_books".* FROM "reserve_books" ORDER BY "reserve_books"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User') AND "patrons"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User')[0m
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activeadmin-1.3.0/app/views/active_admin/resource/index.html.arb (208.2ms)
+Completed 200 OK in 241ms (Views: 219.0ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/admin/reserve_books/new" for 127.0.0.1 at 2018-04-29 21:42:18 +0500
+Processing by Admin::ReserveBooksController#new as HTML
+  [1m[36mAdmin Load (1.4ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('Admin') AND "patrons"."id" = $1 ORDER BY "patrons"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activeadmin-1.3.0/app/views/active_admin/resource/new.html.arb
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User')[0m
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activeadmin-1.3.0/app/views/active_admin/resource/new.html.arb (140.9ms)
+Completed 200 OK in 164ms (Views: 157.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/admin/reserve_books/new?q[name_contains]=b" for 127.0.0.1 at 2018-04-29 21:42:44 +0500
+Processing by Admin::ReserveBooksController#new as */*
+  Parameters: {"q"=>{"name_contains"=>"b"}}
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('Admin') AND "patrons"."id" = $1 ORDER BY "patrons"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: q
+  Rendering /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activeadmin-1.3.0/app/views/active_admin/resource/new.html.arb
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User')[0m
+  [1m[36mBook Load (1.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activeadmin-1.3.0/app/views/active_admin/resource/new.html.arb (123.4ms)
+Completed 200 OK in 152ms (Views: 137.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/admin/reserve_books/new?q[name_contains]=by" for 127.0.0.1 at 2018-04-29 21:42:45 +0500
+Processing by Admin::ReserveBooksController#new as */*
+  Parameters: {"q"=>{"name_contains"=>"by"}}
+  [1m[36mAdmin Load (1.7ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('Admin') AND "patrons"."id" = $1 ORDER BY "patrons"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: q
+  Rendering /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activeadmin-1.3.0/app/views/active_admin/resource/new.html.arb
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User')[0m
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activeadmin-1.3.0/app/views/active_admin/resource/new.html.arb (117.2ms)
+Completed 200 OK in 139ms (Views: 131.3ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/admin/reserve_books/new?q[name_contains]=by%3D" for 127.0.0.1 at 2018-04-29 21:42:46 +0500
+Processing by Admin::ReserveBooksController#new as */*
+  Parameters: {"q"=>{"name_contains"=>"by="}}
+  [1m[36mAdmin Load (2.0ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('Admin') AND "patrons"."id" = $1 ORDER BY "patrons"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: q
+  Rendering /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activeadmin-1.3.0/app/views/active_admin/resource/new.html.arb
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User')[0m
+  [1m[36mBook Load (1.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activeadmin-1.3.0/app/views/active_admin/resource/new.html.arb (127.0ms)
+Completed 200 OK in 150ms (Views: 140.8ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/admin/reserve_books/new" for 127.0.0.1 at 2018-04-29 22:42:05 +0500
+Processing by Admin::ReserveBooksController#new as HTML
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('Admin') AND "patrons"."id" = $1 ORDER BY "patrons"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activeadmin-1.3.0/app/views/active_admin/resource/new.html.arb
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User')[0m
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activeadmin-1.3.0/app/views/active_admin/resource/new.html.arb (125.6ms)
+Completed 200 OK in 146ms (Views: 141.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/admin/reserve_books/new?q[name_contains]=usama" for 127.0.0.1 at 2018-04-29 22:42:11 +0500
+Processing by Admin::ReserveBooksController#new as */*
+  Parameters: {"q"=>{"name_contains"=>"usama"}}
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('Admin') AND "patrons"."id" = $1 ORDER BY "patrons"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: q
+  Rendering /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activeadmin-1.3.0/app/views/active_admin/resource/new.html.arb
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User')[0m
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activeadmin-1.3.0/app/views/active_admin/resource/new.html.arb (123.4ms)
+Completed 200 OK in 144ms (Views: 138.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/admin/reserve_books/new?q[name_contains]=usama%2C" for 127.0.0.1 at 2018-04-29 22:42:12 +0500
+Processing by Admin::ReserveBooksController#new as */*
+  Parameters: {"q"=>{"name_contains"=>"usama,"}}
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('Admin') AND "patrons"."id" = $1 ORDER BY "patrons"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: q
+  Rendering /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activeadmin-1.3.0/app/views/active_admin/resource/new.html.arb
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User')[0m
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activeadmin-1.3.0/app/views/active_admin/resource/new.html.arb (122.6ms)
+Completed 200 OK in 143ms (Views: 137.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/admin/reserve_books/new?q[name_contains]=tiger" for 127.0.0.1 at 2018-04-29 22:42:17 +0500
+Processing by Admin::ReserveBooksController#new as */*
+  Parameters: {"q"=>{"name_contains"=>"tiger"}}
+  [1m[36mAdmin Load (0.6ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('Admin') AND "patrons"."id" = $1 ORDER BY "patrons"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: q
+  Rendering /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activeadmin-1.3.0/app/views/active_admin/resource/new.html.arb
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User')[0m
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activeadmin-1.3.0/app/views/active_admin/resource/new.html.arb (112.3ms)
+Completed 200 OK in 133ms (Views: 127.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/admin/reserve_books/new?q[name_contains]=01" for 127.0.0.1 at 2018-04-29 22:42:24 +0500
+Processing by Admin::ReserveBooksController#new as */*
+  Parameters: {"q"=>{"name_contains"=>"01"}}
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('Admin') AND "patrons"."id" = $1 ORDER BY "patrons"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: q
+  Rendering /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activeadmin-1.3.0/app/views/active_admin/resource/new.html.arb
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User')[0m
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activeadmin-1.3.0/app/views/active_admin/resource/new.html.arb (122.6ms)
+Completed 200 OK in 143ms (Views: 137.2ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/admin/reserve_books" for 127.0.0.1 at 2018-04-29 22:42:38 +0500
+Processing by Admin::ReserveBooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l+0Y8MAKNe6RCJIEqFdT/EIH+6quS5D9zXV1nWdDX3VYFZLzPtHaPih4j7qnhUbmKP09yAi/4q9nTHDIMysJfw==", "reserve_book"=>{"status"=>"1", "issue_date(1i)"=>"2017", "issue_date(2i)"=>"5", "issue_date(3i)"=>"6", "due_date(1i)"=>"2016", "due_date(2i)"=>"6", "due_date(3i)"=>"2", "user_id"=>"2", "book_id"=>"6"}, "commit"=>"Create Reserve book"}
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('Admin') AND "patrons"."id" = $1 ORDER BY "patrons"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User') AND "patrons"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "reserve_books" ("user_id", "book_id", "status", "issue_date", "due_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 2], ["book_id", 6], ["status", "t"], ["issue_date", "2017-05-06"], ["due_date", "2016-06-02"], ["created_at", "2018-04-29 17:42:38.916414"], ["updated_at", "2018-04-29 17:42:38.916414"]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admin/reserve_books/2
+Completed 302 Found in 82ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/admin/reserve_books/2" for 127.0.0.1 at 2018-04-29 22:42:38 +0500
+Processing by Admin::ReserveBooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('Admin') AND "patrons"."id" = $1 ORDER BY "patrons"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReserveBook Load (0.3ms)[0m  [1m[34mSELECT  "reserve_books".* FROM "reserve_books" WHERE "reserve_books"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activeadmin-1.3.0/app/views/active_admin/resource/show.html.arb
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User') AND "patrons"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activeadmin-1.3.0/app/views/active_admin/resource/show.html.arb (106.9ms)
+Completed 200 OK in 130ms (Views: 122.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/admin/reserve_books" for 127.0.0.1 at 2018-04-29 22:42:41 +0500
+Processing by Admin::ReserveBooksController#index as HTML
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('Admin') AND "patrons"."id" = $1 ORDER BY "patrons"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activeadmin-1.3.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "reserve_books" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "reserve_books" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reserve_books"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "reserve_books" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mReserveBook Load (0.3ms)[0m  [1m[34mSELECT  "reserve_books".* FROM "reserve_books" ORDER BY "reserve_books"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User') AND "patrons"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User') AND "patrons"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User')[0m
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered /Users/usamakhan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/activeadmin-1.3.0/app/views/active_admin/resource/index.html.arb (159.0ms)
+Completed 200 OK in 180ms (Views: 171.7ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/api/v1/users/book_suggestion" for 127.0.0.1 at 2018-04-29 22:43:42 +0500
+Processing by Api::V1::UsersController#book_suggestion as */*
+  Parameters: {"book_suggestion"=>{"user_id"=>"13", "book_name"=>"book", "author_name"=>"author"}, "user"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User') AND "patrons"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 19ms (Views: 0.2ms | ActiveRecord: 6.2ms)
+
+
+Started POST "/api/v1/users/book_suggestion" for 127.0.0.1 at 2018-04-29 22:44:45 +0500
+Processing by Api::V1::UsersController#book_suggestion as */*
+  Parameters: {"book_suggestion"=>{"user_id"=>"13", "book_name"=>"book", "author_name"=>"author"}, "user"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User') AND "patrons"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 35927ms (Views: 0.4ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/api/v1/users/book_suggestion" for 127.0.0.1 at 2018-04-29 22:45:24 +0500
+Processing by Api::V1::UsersController#book_suggestion as */*
+  Parameters: {"book_suggestion"=>{"user_id"=>13, "book_name"=>"book", "author_name"=>"author"}, "user"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User') AND "patrons"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 2709ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/users/book_suggestion" for 127.0.0.1 at 2018-04-29 22:47:37 +0500
+Processing by Api::V1::UsersController#book_suggestion as */*
+  Parameters: {"book_suggestion"=>{"user_id"=>13, "book_name"=>"book", "author_name"=>"author"}, "user"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User') AND "patrons"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User')[0m
+Started POST "/api/v1/users/book_suggestion" for 127.0.0.1 at 2018-04-29 22:48:37 +0500
+Processing by Api::V1::UsersController#book_suggestion as */*
+  Parameters: {"book_suggestion"=>{"user_id"=>2, "book_name"=>"book", "author_name"=>"author"}, "user"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User') AND "patrons"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "book_suggestions" ("book_name", "author_name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["book_name", "book"], ["author_name", "author"], ["user_id", 2], ["created_at", "2018-04-29 17:48:54.070388"], ["updated_at", "2018-04-29 17:48:54.070388"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 16456ms (Views: 0.1ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/api/v1/users/book_suggestion" for 127.0.0.1 at 2018-04-29 22:49:42 +0500
+Processing by Api::V1::UsersController#book_suggestion as */*
+  Parameters: {"book_suggestion"=>{"user_id"=>2, "book_name"=>"hello", "author_name"=>"author"}, "user"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User') AND "patrons"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "book_suggestions" ("book_name", "author_name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["book_name", "hello"], ["author_name", "author"], ["user_id", 2], ["created_at", "2018-04-29 17:49:42.418946"], ["updated_at", "2018-04-29 17:49:42.418946"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 53ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/api/v1/users/book_suggestion" for 127.0.0.1 at 2018-04-29 22:51:24 +0500
+Processing by Api::V1::UsersController#book_suggestion as */*
+  Parameters: {"book_suggestion"=>{"user_id"=>13, "book_name"=>"hello", "author_name"=>"author"}, "user"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User') AND "patrons"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/v1/users/book_suggestion" for 127.0.0.1 at 2018-04-29 22:51:32 +0500
+Processing by Api::V1::UsersController#book_suggestion as */*
+  Parameters: {"book_suggestion"=>{"user_id"=>2, "book_name"=>"wqedsa", "author_name"=>"author"}, "user"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "patrons".* FROM "patrons" WHERE "patrons"."type" IN ('User') AND "patrons"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "book_suggestions" ("book_name", "author_name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["book_name", "wqedsa"], ["author_name", "author"], ["user_id", 2], ["created_at", "2018-04-29 17:51:32.175385"], ["updated_at", "2018-04-29 17:51:32.175385"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 54ms (Views: 0.1ms | ActiveRecord: 9.3ms)
+
+

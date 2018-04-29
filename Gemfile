@@ -35,7 +35,7 @@ gem 'devise'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 # invitation model integrated
 gem 'devise_invitable'
-
+gem 'activeadmin_selectize'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
@@ -67,7 +67,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # active admin integration
-gem 'activeadmin', github: 'activeadmin' #refer https://github.com/activeadmin/activeadmin/issues/3926
+gem 'activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 # for exception notifier

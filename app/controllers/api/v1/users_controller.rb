@@ -146,8 +146,8 @@ class Api::V1::UsersController < ApiProtectedController
     else
       resp_data    = ''
       resp_status  = 400
-      resp_message = 'Error'
-      resp_errors  = 'Error'
+      resp_message = 'User not present'
+      resp_errors  = 'User not present'
     end
     common_api_response(resp_data, resp_status, resp_message, resp_errors)
   end
