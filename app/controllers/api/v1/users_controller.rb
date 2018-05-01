@@ -105,7 +105,7 @@ class Api::V1::UsersController < ApiProtectedController
   end
   
   def books_list
-    books = Book.all
+    books = Book.all.limit(50)
     if books.present?
       resp_data    = book_details(books)
       resp_status  = 200
