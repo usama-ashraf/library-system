@@ -11,8 +11,10 @@ Rails.application.routes.draw do
   rescue Exception => e
     puts "ActiveAdmin: #{e.class}: #{e}"
   end
-  root to: "home#index"
-  resources :home do
+  # root to: "home#index"
+  root to: "admin/dashboard#index"
+
+  resources :books do
     member do
       get :upload_books_csv
       post :add_books_data
