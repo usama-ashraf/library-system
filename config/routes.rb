@@ -12,6 +12,12 @@ Rails.application.routes.draw do
     puts "ActiveAdmin: #{e.class}: #{e}"
   end
   root to: "home#index"
+  resources :home do
+    member do
+      get :upload_books_csv
+      post :add_books_data
+    end
+  end
 
   namespace :api do
     namespace :v1 do

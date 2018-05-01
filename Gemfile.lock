@@ -113,6 +113,9 @@ GEM
     formtastic_i18n (0.6.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    handle_invalid_percent_encoding_requests (1.0.2)
+      rack-utf8_sanitizer
+      rails (>= 3.1)
     has_scope (0.7.1)
       actionpack (>= 4.1, < 5.2)
       activesupport (>= 4.1, < 5.2)
@@ -194,6 +197,8 @@ GEM
       rack (~> 2.0)
     rack-test (0.6.3)
       rack (>= 1.0)
+    rack-utf8_sanitizer (1.5.0)
+      rack (>= 1.0, < 3.0)
     rails (5.0.7)
       actioncable (= 5.0.7)
       actionmailer (= 5.0.7)
@@ -246,6 +251,9 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    simple_form (3.5.0)
+      actionpack (> 4, < 5.2)
+      activemodel (> 4, < 5.2)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -292,6 +300,7 @@ DEPENDENCIES
   exception_notification
   faker!
   figaro
+  handle_invalid_percent_encoding_requests
   heroku
   inherited_resources!
   jbuilder (~> 2.5)
@@ -304,8 +313,10 @@ DEPENDENCIES
   pg
   pry
   puma (~> 3.0)
+  rack-utf8_sanitizer
   rails (~> 5.0.0, >= 5.0.0.1)
   sass-rails (~> 5.0)
+  simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)

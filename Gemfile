@@ -29,6 +29,9 @@ gem 'pry'
 gem 'jwt'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'simple_form'
+gem 'rack-utf8_sanitizer'
+gem "handle_invalid_percent_encoding_requests"
 
 # for user authentication
 gem 'devise'

@@ -1,0 +1,26 @@
+<div class="container-fluid mt20">
+  <div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-12 col-md-10">
+      <h2>Upload CSV file</h2>
+    </div>
+  </div>
+  <div class="container-fluid mt20">
+    <div class="row">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5></h5>
+          <div class="ibox-content">
+            <div class="row" style="margin-left: 20px;">
+              <%= simple_form_for :books_data, url: add_books_data_home_path, method: :post, :html=> {:multipart=>true}  do |f| %>
+                  <%= f.label :uploaded_file, 'Upload Excel file for Emails (.xls, .xlsx, .csv)' %>
+                  <%= f.file_field :uploaded_file %>
+                  <br/>
+                  <%= f.submit class: "btn btn-primary", value: "Upload data", data: { disable_with: "Uploading..." } %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
